@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Deep Fryer</title>
+
+    <style>
+        html {
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+        }
+
+        input[type="range"] {
+            width: 300px;
+        }
+
+        canvas {
+            image-rendering: -moz-crisp-edges;
+            image-rendering: -webkit-crisp-edges;
+            image-rendering: pixelated;
+            image-rendering: crisp-edges;
+        }
+    </style>
+
+</head>
+<body>
+    <input onchange="DeepFry(event)" id="file-submission" type="file" accept="image/*">
+
+    <div id="config-sliders" style="display: none;">
+        <label>Brightness</label> <input min="1" max="20" id="param-brightness" type="range">
+        <label>Contrast</label> <input min="1" max="50" id="param-contrast" type="range">
+        <label>Saturate</label> <input min="1" max="400" id="param-saturate" type="range">
+        <label>Hue-rotate</label> <input min="1" max="360" id="param-hue-rotate" type="range">
+        <label>Invert</label> <input min="1" max="100" id="param-invert" type="range">
+    </div>
+
+    <canvas width="0" height="0" id="deep-fried-output"></canvas>
+    <script src="./index.js"></script>
+</body>
+</html>
